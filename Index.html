@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a0b1c;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            max-height: 750px;
+            background: linear-gradient(135deg, #230d26, #120514);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 20px;
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+        }
+        .header {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #ffb6c1;
+            text-transform: uppercase;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .card-box {
+            background: rgba(255, 192, 203, 0.05);
+            border: 1px solid rgba(255, 192, 203, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            width: 85%;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #fce4ec;
+            margin: 10px 0;
+        }
+        .btn {
+            background-color: #ffb6c1;
+            color: #1a0b1c;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4);
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+        .screen {
+            display: none;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .screen.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Screen 1 -->
+        <div id="screen-1" class="screen active">
+            <div class="header">HEY, BIRTHDAY BOY 🤍</div>
+            <div class="content">
+                <h1>SOHAIL</h1>
+                <div style="font-size: 60px; margin: 20px 0;">🎁</div>
+                <p>Someone has a little surprise just for you...</p>
+            </div>
+            <button class="btn" onclick="nextScreen(2)">Tap into your birthday magic</button>
+        </div>
+
+        <!-- Screen 2 -->
+        <div id="screen-2" class="screen">
+            <div class="header">HAHAA, GOT YOU!</div>
+            <div class="content">
+                <h2 style="font-size: 22px; margin-bottom: 15px;">BIRTHDAY REPORT</h2>
+                <div class="card-box" style="text-align: left;">
+                    <p>Age: +1 year 📈</p>
+                    <p>Handsome: still under investigation</p>
+                    <p>Attitude: occasionally too high</p>
+                    <p>Cute level: unlimited 🤍</p>
+                </div>
+            </div>
+            <button class="btn" onclick="nextScreen(3)">Okay, now show me more</button>
+        </div>
+
+        <!-- Screen 3 -->
+        <div id="screen-3" class="screen">
+            <div class="header">A LITTLE LOVE NOTE</div>
+            <div class="content">
+                <h1 style="font-size: 24px;">SOHAIL,</h1>
+                <div class="card-box">
+                    <p>You make ordinary days feel special. I'm grateful for our laughs, our moments, and all the memories still waiting for us.</p>
+                    <p>I hope this year brings you peace, success, good health, and happiness.</p>
+                </div>
+            </div>
+            <button class="btn" onclick="nextScreen(4)">With love, Sabreen 🤍</button>
+        </div>
+
+        <!-- Screen 4 -->
+        <div id="screen-4" class="screen">
+            <div class="header">THE BIG REVEAL</div>
+            <div class="content">
+                <h1>HAPPY BIRTHDAY</h1>
+                <div style="font-size: 60px; margin: 20px 0;">🎂</div>
+                <p>Make a wish, birthday boy. Today, cake comes before pictures. That's birthday law. No arguments.</p>
+            </div>
+            <button class="btn" onclick="nextScreen(5)">Let the celebration begin</button>
+        </div>
+
+        <!-- Screen 5 -->
+        <div id="screen-5" class="screen">
+            <div class="header">ONE LAST THING</div>
+            <div class="content">
+                <h1>YOU MATTER</h1>
+                <div class="card-box">
+                    <p>I hope your day feels as special as you make the people around you feel. Keep smiling, keep growing, and never stop believing in yourself.</p>
+                </div>
+            </div>
+            <button class="btn" style="background: transparent; color: #ffb6c1; border: 1px solid #ffb6c1;">Happy Birthday, Sohail 🤍 — Sabreen</button>
+        </div>
+    </div>
+
+    <script>
+        function nextScreen(screenNumber) {
+            // Hide all screens
+            const screens = document.querySelectorAll('.screen');
+            screens.forEach(screen => screen.classList.remove('active'));
+            
+            // Show target screen
+            document.getElementById('screen-' + screenNumber).classList.add('active');
+        }
+    </script>
+</body>
+</html>
